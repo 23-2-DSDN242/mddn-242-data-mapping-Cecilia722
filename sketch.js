@@ -65,9 +65,29 @@ function draw () {
       ellipse(x,y,10)
     }
     else {
+     
+      push()
+      noStroke()
+      fill(0,0,0,50)
+      rect(x-43, y+6, 57, 3,20);
 
-      strokeWeight(3);
+
+     
+      fill(pix)
+      rect(x-50, y, 60, 3,10);
+     
+      
+      
+
+      fill(255,255,255,30)
+      rect(x-47, y+2, 50, 2,20);
+      pop()
+
+      push()
+      fill(pix)
+      strokeWeight(2);
       line(x-50, y, x+50, y);
+      pop()
     }
 
     // ellipse(x, y, pointSize, pointSize);
