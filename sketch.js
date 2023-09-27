@@ -66,7 +66,7 @@ function draw () {
     }
     else {
 
-      strokeWeight(2);
+      strokeWeight(3);
       line(x-50, y, x+50, y);
     }
 
