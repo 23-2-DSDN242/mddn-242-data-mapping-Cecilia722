@@ -18,7 +18,7 @@ function setup () {
 
   // imageMode(CENTER);
   noStroke();
-  background(128, 128, 128);
+  background(255,255,255);
   sourceImg.loadPixels();
   maskImg.loadPixels();
   // image(sourceImg, 0, 0, width, height);
@@ -44,7 +44,7 @@ function draw () {
     stroke(pix);
     let pointSize = 20;
     if(mask[0] > 128) {
-      strokeWeight(1);
+      strokeWeight(1.5);
       line(x, y-50, x, y+50);
       ellipse(x,y,ellipse_size)
     }
