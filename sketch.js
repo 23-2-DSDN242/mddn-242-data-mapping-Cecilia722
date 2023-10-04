@@ -3,8 +3,8 @@ let maskImg=null;
 let renderCounter=0;
 
 // change these three lines as appropiate
-let sourceFile = "input_4.jpg";
-let maskFile   = "mask_4.png";
+let sourceFile = "input_1.jpg";
+let maskFile   = "mask_1.png";
 let outputFile = "output_1.png";
 
 function preload() {
@@ -24,24 +24,6 @@ function setup () {
   // image(sourceImg, 0, 0, width, height);
 }
 
-function owl(x, y, g, s) {
-  push();
-  translate(x, y);
-  scale(s);  // Set the createCanvas
-  stroke(g); // Set the gray value
-  strokeWeight(70);
-  line(0, -35, 0, -65); // Body
-  noStroke();
-  fill(255-g);
-  ellipse(-17.5, -65, 35, 35); // Left eye dome
-  ellipse(17.5, -65, 35, 35);  // Right eye dome
-  arc(0, -65, 70, 70, 0, PI);  // Chin
-  fill(g);
-  ellipse(-14, -65, 8, 8);  // Left eye
-  ellipse(14, -65, 8, 8);   // Right eye
-  quad(0, -58, 4, -51, 0, -44, -4, -51); // Beak
-  pop();
-}
 
 function draw () {
   for(let i=0;i<10000;i++) {
@@ -50,6 +32,8 @@ function draw () {
     let pix = sourceImg.get(x, y);
     let mask = maskImg.get(x, y);
     let scale = 0.1;
+    let ellipse_sizes = ['3', '19', '7', '13'];
+    let ellipse_size= random(ellipse_sizes); 
     // if(mask[0] > 128) {
     //   scale = 0.5;
     // }
@@ -62,7 +46,7 @@ function draw () {
     if(mask[0] > 128) {
       strokeWeight(1);
       line(x, y-50, x, y+50);
-      ellipse(x,y,10)
+      ellipse(x,y,ellipse_size)
     }
     else {
      
