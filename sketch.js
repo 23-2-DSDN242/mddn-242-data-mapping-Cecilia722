@@ -10,27 +10,35 @@ let outputFile = "output_1.png";
 function preload() {
   sourceImg = loadImage(sourceFile);
   maskImg = loadImage(maskFile);
+  textImg = loadImage("texture.png");
 }
 
 function setup () {
   let main_canvas = createCanvas(1920, 1080);
   main_canvas.parent('canvasContainer');
 
-  // imageMode(CENTER);
+  imageMode(CENTER);
   noStroke();
   background(255,255,255);
   sourceImg.loadPixels();
   maskImg.loadPixels();
+  textImg.loadPixels();
   // image(sourceImg, 0, 0, width, height);
 }
 
+let X_STOP = 640;
+let Y_STOP = 480;
 
 function draw () {
+
+
+
   for(let i=0;i<10000;i++) {
     let x = floor(random(sourceImg.width));
     let y = floor(random(sourceImg.height));
     let pix = sourceImg.get(x, y);
     let mask = maskImg.get(x, y);
+    let tex = textImg.get(x, y);
     let scale = 0.1;
     let ellipse_sizes = ['3', '19', '7', '13'];
     let ellipse_size= random(ellipse_sizes); 
@@ -41,17 +49,24 @@ function draw () {
     //   scale = 0.1;
     // }
     fill(pix);
-    stroke(pix);
+    
     let pointSize = 20;
     if(mask[0] > 128) {
+
+      set(x, y, pix);
+      
+      push();
+      
       strokeWeight(1.5);
       line(x, y-50, x, y+50);
       ellipse(x,y,ellipse_size)
+      pop();
     }
     else {
      
       push()
       noStroke()
+     
       fill(0,0,0,50)
       rect(x-43, y+6, 57, 3,20);
 
