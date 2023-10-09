@@ -69,14 +69,10 @@ function draw () {
      
       fill(0,0,0,50)
       rect(x-43, y+6, 57, 3,20);
-
-
      
       fill(pix)
       rect(x-50, y, 60, 3,10);
      
-      
-      
 
       fill(255,255,255,30)
       rect(x-47, y+2, 50, 2,20);
