@@ -203,6 +203,24 @@ function draw () {
 
    
 
+      
+      
+    }
+    else {
+
+  
+     
+      push()
+      noStroke()
+     
+      fill(0,0,0,50)
+      rect(x-43, y+6, 57, 3,20);
+     
+      fill(pix)
+      rect(x-50, y, 60, 3,10);
+      rect(x-100, y, 3, 60,10);
+
+
       push();
      
       rotate(random_rotation)
@@ -224,21 +242,6 @@ function draw () {
       rotate(random_rotation)
       flower(x,y,ellipse_size)
       pop();
-      
-    }
-    else {
-
-  
-     
-      push()
-      noStroke()
-     
-      fill(0,0,0,50)
-      rect(x-43, y+6, 57, 3,20);
-     
-      fill(pix)
-      rect(x-50, y, 60, 3,10);
-      rect(x-100, y, 3, 60,10);
      
 
       // fill(255,255,255,30)
