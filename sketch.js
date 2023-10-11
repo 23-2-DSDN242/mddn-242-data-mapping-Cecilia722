@@ -39,6 +39,7 @@ function draw () {
     let pix = sourceImg.get(x, y);
     let mask = maskImg.get(x, y);
     let tex = textImg.get(x, y);
+    let col= color(pix)
     let scale = 0.1;
     let ellipse_sizes = ['3', '19', '7', '13'];
     let ellipse_size= random(ellipse_sizes); 
@@ -53,6 +54,15 @@ function draw () {
     let pointSize = 20;
     if(mask[0] > 128) {
 
+      
+      let new_col= [0,0,0,255];
+      for(let k=0; k<3; k++){
+        new_col[k]=map (100,0,100,pix[k], tex[k]);
+      }
+
+      set(x,y,new_col);
+
+
       set(x, y, pix);
       
       push();
@@ -63,6 +73,8 @@ function draw () {
       pop();
     }
     else {
+
+  
      
       push()
       noStroke()
