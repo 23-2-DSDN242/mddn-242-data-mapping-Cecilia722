@@ -2,7 +2,7 @@ let sourceImg = null;
 let maskImg = null;
 let renderCounter = 0;
 
-// change these three lines as appropiate
+
 let sourceFile = "input_3.jpg";
 let maskFile = "mask_3.png";
 let outputFile = "output_3.png";
@@ -78,7 +78,7 @@ function draw() {
         new_col[k] = map(100, 0, 100, pix[k], tex[k]);
       }
 
-      // draw bulr ellipse
+      // draw blur ellipse
       set(x, y, pix);
       push();
       strokeWeight(0.5);
